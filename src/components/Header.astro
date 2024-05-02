@@ -1,0 +1,35 @@
+---
+import HeaderLink from "./HeaderLink.astro"
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
+import Icon from "./Icon.astro"
+import { SOCIAL_HANDLES } from "../consts"
+---
+
+<header class="my-12">
+	<nav class="flex justify-between">
+		<div>
+			<h2 class="font-bold text-4xl"><a href="/">{SITE_TITLE}</a></h2>
+			<p class="text-lg text-gray-700 italic">{SITE_DESCRIPTION}</p>
+			<div class="internal-links gap-4 flex mt-3">
+				<HeaderLink href="/">home</HeaderLink>
+				<HeaderLink href="/code">code</HeaderLink>
+				<HeaderLink href="/about">about</HeaderLink>
+				<HeaderLink
+					href="https://blog.realogs.in"
+					class="!flex items-center"
+					>realogs
+					<Icon name="external_link" />
+				</HeaderLink>
+			</div>
+		</div>
+		<div class="flex items-center">
+			<a href=`https://github.com/${SOCIAL_HANDLES.GITHUB}`>
+				<Icon
+					name="socials/github"
+					class="relative -top-[2px] text-3xl text-zinc-600"
+				/>
+			</a>
+		</div>
+	</nav>
+	<hr class="w-full mt-6" />
+</header>

@@ -1,0 +1,83 @@
+---
+export interface Props {
+	name: string
+	class?: string
+}
+const { name, class: className } = Astro.props as Props
+
+async function getSVG(
+	name: string,
+	overrides: Record<string, string | null | undefined> = {}
+): Promise<{
+	attributes: Record<string, string>
+	innerHTML: string
+	svgTag: string
+}> {
+	const filepath = `/src/icons/${name}.svg`
+	const files = import.meta.glob("/src/icons/**/*.svg", { as: "raw" })
+
+	if (!(filepath in files)) {
+		throw new Error(`${filepath} not found`)
+	}
+
+	let svgContent = ""
+	try {
+		svgContent = await files[filepath]()
+	} catch (e) {
+		throw new Error(`Error loading ${filepath}: ${e}`)
+	}
+
+	const svgStartTagMatch = svgContent.match(/<svg[^>]*>/)
+
+	if (!svgStartTagMatch) {
+		throw new Error(`SVG start tag not found in ${filepath}`)
+	}
+
+	const svgStartTag = svgStartTagMatch[0]
+	const attributeRegex = /(\w+)=["']?([^"']+)["']?/g
+	let attributes: Record<string, string | null | undefined> = {}
+	let match: RegExpExecArray | null
+
+	while ((match = attributeRegex.exec(svgStartTag)) !== null) {
+		attributes[match[1]] = match[2]
+	}
+
+	// Apply overrides
+	for (const [key, value] of Object.entries(overrides)) {
+		if (value == null || value === "undefined" || value === "null") {
+			continue
+		}
+		attributes[key] = value
+	}
+
+	const attributesString = Object.entries(attributes)
+		.map(([key, value]) => `${key}="${value}"`)
+		.join(" ")
+
+	const innerHTML = svgContent
+		.replace(svgStartTag, "")
+		.replace(/<\/svg\s*>/, "")
+		.trim()
+
+	return {
+		attributes: attributes as Record<string, string>,
+		innerHTML,
+		svgTag: `<svg ${attributesString}>${innerHTML}</svg>`,
+	}
+}
+let svgTag = ""
+try {
+	const { svgTag: maybeSvgTag } = await getSVG(name, {
+		class: className,
+		width: "1em",
+		height: "1em",
+		"aria-hidden": "true",
+		focusable: "false",
+		"data-icon": name,
+		role: "img",
+	})
+	svgTag = maybeSvgTag
+} catch {}
+---
+
+<Fragment set:html={svgTag} />

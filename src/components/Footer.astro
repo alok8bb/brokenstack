@@ -1,0 +1,25 @@
+---
+import Icon from "./Icon.astro"
+
+const today = new Date()
+---
+
+<footer
+	class="flex flex-col gap-4 sm:flex-row sm:gap-0 my-16 text-sm justify-between"
+>
+	&copy; {today.getFullYear()} - Alok
+	<div class="social-links gap-4 flex">
+		<a class="flex items-center" href="https://alk.pw"
+			>Portfolio
+
+			<Icon name="external_link" />
+		</a>
+		<a
+			class="flex items-center"
+			href="https://github.com/alok8bb/brokenstack"
+			>Source
+			<Icon name="external_link" />
+		</a>
+		<a href="">RSS</a>
+	</div>
+</footer>
