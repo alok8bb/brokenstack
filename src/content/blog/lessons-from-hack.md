@@ -33,4 +33,6 @@ Contabo also had password-based authentication enabled for SSH. You should never
 Lastly, the Docker daemon can also be configured to use 127.0.0.1 as the default IP by editing /etc/docker/daemon.json.
 On a side note, you can also use Tailscale SSH for connecting with your server, its super easy and then we can also close the SSH port. 
 
+> If you're using Tailscale, you can map to the Tailscale IP of the same machine instead of mapping to 127.0.0.1 (localhost). This ensures the database is only accessible via Tailscale, while still allowing local access without routing through Tailscale.
+
 Hope this helps!
