@@ -2,7 +2,7 @@
 title: 'Lessons from a Hack: Securing systems properly when using UFW with Docker'
 description: 'My MongoDB was hacked because Docker mapped port 27017 publicly, bypassing UFW. The hacker demanded a ransom for the stolen data. Prevent this by using -p 127.0.0.1:27017:27017 to bind the port locally and secure your database or docker images'
 pubDate: '4 Jun 2024'
-category: 'code'
+category: 'home'
 ---
 
 > TL;DR: My MongoDB was hacked because Docker mapped port 27017 publicly, bypassing UFW. The hacker demanded a ransom for the stolen data. Prevent this by using -p 127.0.0.1:27017:27017 to bind the port locally and secure your database or docker images
