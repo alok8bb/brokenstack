@@ -5,18 +5,25 @@ import Footer from "../components/Footer.astro"
 import "@fontsource/geist-sans"
 import "@fontsource/geist-mono"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+import ThemeHeadScript from "../components/ThemeHeadScript.astro"
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<ThemeHeadScript />
 	</head>
-	<body class="max-w-[82ch] px-4 m-auto">
+	<body class="max-w-[82ch] px-4 m-auto dark:bg-black">
 		<Header />
 		<main>
 			<slot />
 		</main>
 		<Footer />
+		<script>
+			import { initThemeStoreSubscribe } from "../libs/theme/store"
+
+			initThemeStoreSubscribe()
+		</script>
 	</body>
 </html>

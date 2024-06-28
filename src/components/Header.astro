@@ -3,6 +3,7 @@ import HeaderLink from "./HeaderLink.astro"
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
 import Icon from "./Icon.astro"
 import { SOCIAL_HANDLES } from "../consts"
+import ThemeSwitcher from "./ThemeSwitcher"
 ---
 
 <header class="my-12">
@@ -23,13 +24,8 @@ import { SOCIAL_HANDLES } from "../consts"
 				</HeaderLink>
 			</div>
 		</div>
-		<div class="flex items-center">
-			<a href=`https://github.com/${SOCIAL_HANDLES.GITHUB}`>
-				<Icon
-					name="socials/github"
-					class="relative -top-[2px] text-3xl text-zinc-600"
-				/>
-			</a>
+		<div class="flex items-center justify-center align-middle">
+			<ThemeSwitcher client:load />
 		</div>
 	</nav>
 	<hr class="w-full mt-6" />
