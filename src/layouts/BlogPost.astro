@@ -3,9 +3,12 @@ import type { CollectionEntry } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
 import MainLayout from "./MainLayout.astro"
 
-type Props = CollectionEntry<"blog">["data"]
+type Props = CollectionEntry<"blog">["data"] & {
+	remarkPluginFormatter: any
+}
 
-const { title, pubDate, updatedDate, heroImage } = Astro.props
+const { title, pubDate, updatedDate, heroImage, remarkPluginFormatter } =
+	Astro.props
 ---
 
 <MainLayout>
@@ -17,16 +20,20 @@ const { title, pubDate, updatedDate, heroImage } = Astro.props
 				<h1 class="text-4xl font-bold">
 					{title}
 				</h1>
-				<div class="date dark:text-gray-300">
-					<FormattedDate date={pubDate} />
-					{
-						// updatedDate && (
-						// <div class="last-updated-on">
-						// 	Last updated on{" "}
-						// 	<FormattedDate date={updatedDate} />
-						// </div>
-						// )
-					}
+				<div class="flex items-center text-sm dark:text-gray-300 gap-3">
+					<div class="date">
+						<FormattedDate date={pubDate} />
+						{
+							// updatedDate && (
+							// <div class="last-updated-on">
+							// 	Last updated on{" "}
+							// 	<FormattedDate date={updatedDate} />
+							// </div>
+							// )
+						}
+					</div>
+					•
+					<span>{remarkPluginFormatter.minutesRead}</span>
 				</div>
 				<div class="hero-image">
 					{heroImage && <img src={heroImage} alt="" class="m-auto" />}
