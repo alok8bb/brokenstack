@@ -19,13 +19,13 @@ const posts = (await getCollection("blog")).sort(
 					.map((post) => (
 						<li>
 							<a href={`/blog/${post.slug}/`}>
-								<p class="date text-sm text-gray-700">
+								<p class="date text-sm text-gray-700 dark:text-gray-300">
 									<FormattedDate date={post.data.pubDate} />
 								</p>
-								<h4 class="title text-2xl font-bold hover:underline w-full">
+								<h4 class="title text-2xl font-bold hover:underline w-full dark:text-white">
 									{post.data.title}
 								</h4>
-								<p class="line-clamp-2 text-lg text-gray-700">
+								<p class="line-clamp-2 text-lg text-gray-700 dark:text-gray-400">
 									{post.data.description}
 								</p>
 							</a>

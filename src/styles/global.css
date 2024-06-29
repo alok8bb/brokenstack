@@ -1,3 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.prose-margin-fix {
+		@apply prose-headings:mt-5 prose-headings:mb-1 prose-hr:my-5;
+	}
+
+	.prose-dark-fix {
+		@apply dark:prose-headings:text-gray-100 dark:prose-li:text-gray-400 dark:prose-p:text-gray-400 dark:prose-code:text-gray-100 prose-a:text-blue-600 dark:prose-a:text-blue-300;
+	}
+}
+
 body {
 	/* font-family: "PT Serif", serif; */
 	font-family: "Geist Sans", sans-serif;

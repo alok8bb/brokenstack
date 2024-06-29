@@ -2,30 +2,50 @@
 import HeaderLink from "./HeaderLink.astro"
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
 import Icon from "./Icon.astro"
-import { SOCIAL_HANDLES } from "../consts"
 import ThemeSwitcher from "./ThemeSwitcher"
 ---
 
-<header class="my-12">
-	<nav class="flex justify-between">
-		<div>
-			<h2 class="font-bold text-4xl"><a href="/">{SITE_TITLE}</a></h2>
-			<p class="text-lg text-gray-700 italic">{SITE_DESCRIPTION}</p>
-			<div class="internal-links gap-4 flex mt-3">
-				<HeaderLink href="/">home</HeaderLink>
-				<HeaderLink href="/snippets">snippets</HeaderLink>
-				<HeaderLink href="/misc">misc</HeaderLink>
-				<HeaderLink href="/about">about</HeaderLink>
-				<HeaderLink
-					href="https://blog.realogs.in"
-					class="!flex items-center"
-					>realogs
-					<Icon name="external_link" />
-				</HeaderLink>
+<header class="mt-12 mb-8">
+	<nav class="flex flex-col">
+		<div class="flex justify-between">
+			<div>
+				<h2 class="font-bold text-4xl dark:text-white">
+					<a href="/">{SITE_TITLE}</a>
+				</h2>
+				<p class="text-lg text-gray-700 italic dark:text-gray-500">
+					{SITE_DESCRIPTION}
+				</p>
+			</div>
+			<div
+				class="flex items-center justify-center align-middle gap-2 flex-wrap self-center"
+			>
+				<div
+					class="hover:cursor-pointer p-1.5 hover:bg-gray-200 hover:dark:bg-gray-900 rounded-lg inline-flex text-2xl"
+				>
+					<a href="https://github.com/alok8bb" target="_blank">
+						<Icon
+							name="socials/github"
+							class="text-black dark:text-gray-300"
+						/>
+					</a>
+				</div>
+				<ThemeSwitcher client:load />
 			</div>
 		</div>
-		<div class="flex items-center justify-center align-middle">
-			<ThemeSwitcher client:load />
+
+		<div
+			class="internal-links gap-4 flex mt-3 dark:text-gray-400 flex-wrap"
+		>
+			<HeaderLink href="/">home</HeaderLink>
+			<HeaderLink href="/snippets">snippets</HeaderLink>
+			<HeaderLink href="/misc">misc</HeaderLink>
+			<HeaderLink href="/about">about</HeaderLink>
+			<HeaderLink
+				href="https://blog.realogs.in"
+				class="!flex items-center"
+				>realogs
+				<Icon name="external_link" />
+			</HeaderLink>
 		</div>
 	</nav>
 	<hr class="w-full mt-6" />
