@@ -27,7 +27,7 @@ export const GET: APIRoute = async function GET({ params, request }) {
   const dir = dirname(fileURLToPath(import.meta.url));
   const fontPaths = ["Inter-Regular.ttf", "Inter-Bold.ttf", "Inter-Medium.ttf"]
     .map(
-      (font) => `${dir}/../../../../public/font/inter/${font}`,
+      (font) => `${dir}/../../public/font/inter/${font}`,
     );
 
   const [interRegular, interBold, interMedium] = await Promise.all(
