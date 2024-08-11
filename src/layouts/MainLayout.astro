@@ -6,15 +6,11 @@ import "@fontsource/geist-sans"
 import "@fontsource/geist-mono"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import ThemeHeadScript from "../components/ThemeHeadScript.astro"
-
-const currentUrl = Astro.request.url
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta property="og:image" content=`${currentUrl}/og-image.png` />
-		<meta property="twitter:image" content=`${currentUrl}/og-image.png` />
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<ThemeHeadScript />
 	</head>
