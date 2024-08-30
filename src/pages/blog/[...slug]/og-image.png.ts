@@ -63,7 +63,7 @@ export const GET: APIRoute = async function GET({ params, request }) {
                   type: "img",
                   props: {
                     src:
-                      "https://pbs.twimg.com/profile_images/1817506191133544448/_0CK6ZU1_400x400.jpg",
+                      "https://i.imgur.com/0RrOkQK.png",
                     style: {
                       width: "70px",
                       backgroundColor: "black",
