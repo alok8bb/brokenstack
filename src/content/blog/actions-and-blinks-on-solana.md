@@ -24,12 +24,11 @@ Blinks are now supported on X.com. For example, anyone can share a link to excha
 
 This UI is added by the browser extension, in this case, Solflare. Whenever it encounters a link that is a blink, it turns it into such cards.
 
-To enable Blinks in Solflare, go to Settings > Security & Privacy and Enable Actions on X.com:
-![Solflare Blink Toggle](https://imgur.com/yMEvbav.png)
-In Phantom, the setting is inside experimental features.
+To enable Blinks in Solflare, go to Settings > Security & Privacy and Enable Actions and in Phantom, the setting is inside experimental features.
 
-A blink is essentially a Solana action. Here's an example of a blink I created for a personal project and how it works behind the scenes:
+Here's an example of a blink I created for a personal project and how it works behind the scenes:
 <p align="center"><img src="https://imgur.com/YQwWFHz.png" width="400" alt="solaris auction blink"/></p>
+
 As you can see, it contains a few buttons and an option for a custom amount, just like the Jupiter blink. The blink appears whenever the wallet encounters a URL for my website, and the way it knows what to render goes like this:
 It first makes a request to see if there's an `actions.json` file hosted on the root of the domain, in my case `https://solaris-auctions.alk.pw/actions.json`. This file contains information about which path patterns to match and where to look for their related actions. We can create multiple actions and map them to different endpoints on the main URL. With `actions.json`, the extension will be able to find exactly where to make the action request. For this simple blink, the `actions.json` looks like this:
 
@@ -85,7 +84,7 @@ Once any of the buttons is pressed, a `POST` request will be made to the corresp
 This happens all in no time, so the user directly sees the signing prompt on the browser extension and doesn't have to leave the current page to make transactions.
 ![Working of Blinks](https://imgur.com/xKcgEo2.png)
 
-Resources to get started with building Blinks and Solana Actions:<br>
+📎 Resources to get started with building Blinks and Solana Actions:<br>
 [Official docs from which this blog is inspired from](https://solana.com/docs/advanced/actions)<br>
 [Create own Blink by Solandy - YouTube Video ](https://youtu.be/dLpu6vYsTaI?si=FZrusEV4Lszo6VZK)<br>
 [Quick Start Guide - Dialect](https://dashboard.dialect.to/actions)
