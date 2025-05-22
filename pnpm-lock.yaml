@@ -26,6 +26,12 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.7.0(typescript@5.4.5))(tailwindcss@3.4.3)
+      '@fontsource-variable/instrument-sans':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource-variable/inter':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@fontsource/geist-mono':
         specifier: ^5.0.3
         version: 5.0.3
@@ -423,6 +429,12 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/instrument-sans@5.2.5':
+    resolution: {integrity: sha512-y03KXtQDL09mm8TR4gYD77FIJPht8jaPcP9cOgl5nVSbjZZrzy1koxQOQuPF4QFE0eUsSRsjYnvISIiWcj3+gA==}
+
+  '@fontsource-variable/inter@5.2.5':
+    resolution: {integrity: sha512-TrWffUAFOnT8zroE9YmGybagoOgM/HjRqMQ8k9R0vVgXlnUh/vnpbGPAS/Caz1KIlOPnPGh6fvJbb7DHbFCncA==}
 
   '@fontsource/geist-mono@5.0.3':
     resolution: {integrity: sha512-ekY5FNiK7aMxan/c6lgVQa/rIwQ/AMEJZJWY7768jBrLVdkrCxfEfCe1ePpe7C3JnySy7c9R6HC4Xh4ksfjTaw==}
@@ -2866,6 +2878,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.20.2':
     optional: true
+
+  '@fontsource-variable/instrument-sans@5.2.5': {}
+
+  '@fontsource-variable/inter@5.2.5': {}
 
   '@fontsource/geist-mono@5.0.3': {}
 
