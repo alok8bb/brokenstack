@@ -8,14 +8,28 @@ import ThemeSwitcher from "./ThemeSwitcher"
 <header class="mt-12 mb-8">
 	<nav class="flex flex-col" id="nav">
 		<div class="flex justify-between">
+			<div></div>
 			<div>
-				<h2 class="font-bold text-4xl dark:text-white font-instrumentSans">
+				<h2
+					class="font-bold text-4xl text-center dark:text-white font-instrumentSans"
+				>
 					<a href="/">{SITE_TITLE}</a>
 				</h2>
-				<p class="text-lg text-gray-700 dark:text-gray-500">
+				<p class="text-lg text-gray-700 dark:text-gray-500 text-center">
 					{SITE_DESCRIPTION}
 				</p>
+				<div>
+					<div
+						class="internal-links gap-4 flex mt-3 dark:text-medium-gray flex-wrap items-center justify-center"
+					>
+						<HeaderLink href="/">Home</HeaderLink>
+						<HeaderLink href="/snippets">Snippets</HeaderLink>
+						<HeaderLink href="/misc">Misc</HeaderLink>
+						<HeaderLink href="/about">About</HeaderLink>
+					</div>
+				</div>
 			</div>
+
 			<div
 				class="flex items-center justify-center align-middle gap-2 flex-wrap self-center transition-all duration-300 ease-in-out opacity-0"
 				id="controls"
@@ -33,30 +47,15 @@ import ThemeSwitcher from "./ThemeSwitcher"
 				<ThemeSwitcher client:load />
 			</div>
 		</div>
-
-		<div
-			class="internal-links gap-4 flex mt-3 dark:text-gray-400 flex-wrap"
-		>
-			<HeaderLink href="/">home</HeaderLink>
-			<HeaderLink href="/snippets">snippets</HeaderLink>
-			<HeaderLink href="/misc">misc</HeaderLink>
-			<HeaderLink href="/about">about</HeaderLink>
-			<HeaderLink
-				href="https://blog.realogs.in"
-				class="!flex items-center"
-				>realogs
-				<Icon name="external_link" />
-			</HeaderLink>
-		</div>
 	</nav>
 </header>
 
-<script> 
-	document.getElementById('nav')?.addEventListener("mouseenter", () => {
-		document.getElementById('controls')?.classList.remove("opacity-0")
+<script>
+	document.getElementById("nav")?.addEventListener("mouseenter", () => {
+		document.getElementById("controls")?.classList.remove("opacity-0")
 	})
 
-	document.getElementById('nav')?.addEventListener("mouseleave", () => {
-		document.getElementById('controls')?.classList.add("opacity-0")
+	document.getElementById("nav")?.addEventListener("mouseleave", () => {
+		document.getElementById("controls")?.classList.add("opacity-0")
 	})
 </script>

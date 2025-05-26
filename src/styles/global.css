@@ -7,8 +7,13 @@
 		@apply prose-headings:mt-5 prose-headings:mb-1 prose-hr:my-5;
 	}
 
+	.prose-typography-fix {
+		@apply prose-h1:font-medium prose-h2:font-medium prose-h3:font-medium prose-h4:font-medium prose-h5:font-medium prose-h6:font-medium;
+		@apply prose-p:font-thin prose-li:font-thin
+	}
+
 	.prose-dark-fix {
-		@apply dark:prose-headings:text-gray-100 dark:prose-li:text-gray-400 dark:prose-p:text-gray-400 dark:prose-code:text-gray-100 prose-a:text-blue-600 dark:prose-a:text-blue-300;
+		@apply dark:prose-headings:text-near-white dark:prose-li:text-near-white dark:prose-p:text-near-white dark:prose-code:text-medium-gray prose-a:text-blue-600 dark:prose-a:text-accent-blue;
 	}
 }
 

@@ -14,13 +14,13 @@ const { title, pubDate, updatedDate, heroImage, remarkPluginFormatter } =
 <MainLayout>
 	<article>
 		<div
-			class="prose prose-margin-fix prose-h1:text-2xl prose-dark-fix max-w-full"
+			class="prose prose-lg prose-margin-fix prose-h1:text-2xl prose-typography-fix prose-dark-fix max-w-full"
 		>
-			<div class="title animate-fade-in opacity-0" style={{animationDelay: "0.1s"}}>
-				<h1 class="text-4xl font-bold">
+			<div class="flex gap-3 flex-col title animate-fade-in opacity-0" style={{animationDelay: "0.1s"}}>
+				<h1 class="!text-4xl font-semibold">
 					{title}
 				</h1>
-				<div class="flex items-center text-sm dark:text-gray-300 gap-3">
+				<div class="flex items-center text-sm dark:text-medium-gray gap-3">
 					<div class="date">
 						<FormattedDate date={pubDate} />
 						{

@@ -15,7 +15,7 @@ const isActive = href === pathname || href === "/" + subpath?.[0]
 	class:list={[
 		className,
 		{ active: isActive },
-		"hover:underline dark:hover:text-gray-300",
+		"hover:underline",
 	]}
 	{...props}
 >
@@ -29,6 +29,6 @@ const isActive = href === pathname || href === "/" + subpath?.[0]
 	a.active {
 		font-weight: bolder;
 		text-decoration: underline;
-		@apply dark:text-white;
+		@apply dark:text-near-white;
 	}
 </style>

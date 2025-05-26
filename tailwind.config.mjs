@@ -17,6 +17,11 @@ export default {
 			animation: {
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 			},
+			colors: {
+				"near-white": "#EDEDED",
+				"medium-gray": "#A1A1A1",
+				"accent-blue": "#52A8FF"
+			}
 		}
 	},
 	plugins: [require("@tailwindcss/typography"), require('tailwindcss-motion')],
