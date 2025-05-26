@@ -7,8 +7,17 @@ export default {
 			fontFamily: {
 				instrumentSans: ["Instrument Sans", "sans-serif"],
 				inter: ["Inter", "sans-serif"],
-			}
+			},
+			keyframes: {
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' },
+				},
+			},
+			animation: {
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+			},
 		}
 	},
-	plugins: [require("@tailwindcss/typography")],
+	plugins: [require("@tailwindcss/typography"), require('tailwindcss-motion')],
 }

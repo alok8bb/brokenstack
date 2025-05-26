@@ -16,9 +16,9 @@ const posts = (await getCollection("blog")).sort(
 			{
 				posts
 					.filter((post) => post.data.category === category)
-					.map((post) => (
-						<li>
-							<a href={`/blog/${post.slug}/`}>
+					.map((post, index) => (
+						<li >
+							<a href={`/blog/${post.slug}/`} class={`opacity-0 animate-fade-in`} style={{animationDelay: `${index * 0.2}s`}}>
 								<p class="date text-sm text-gray-700 dark:text-gray-300">
 									<FormattedDate date={post.data.pubDate} />
 								</p>

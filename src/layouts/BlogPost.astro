@@ -16,7 +16,7 @@ const { title, pubDate, updatedDate, heroImage, remarkPluginFormatter } =
 		<div
 			class="prose prose-margin-fix prose-h1:text-2xl prose-dark-fix max-w-full"
 		>
-			<div class="title">
+			<div class="title animate-fade-in opacity-0" style={{animationDelay: "0.1s"}}>
 				<h1 class="text-4xl font-bold">
 					{title}
 				</h1>
@@ -39,7 +39,7 @@ const { title, pubDate, updatedDate, heroImage, remarkPluginFormatter } =
 					{heroImage && <img src={heroImage} alt="" class="m-auto" />}
 				</div>
 			</div>
-			<div class="mt-5">
+			<div class="mt-5 animate-fade-in opacity-0" style={{animationDelay: "0.2s"}}>
 				<slot />
 			</div>
 		</div>

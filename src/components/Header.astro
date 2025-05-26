@@ -6,20 +6,21 @@ import ThemeSwitcher from "./ThemeSwitcher"
 ---
 
 <header class="mt-12 mb-8">
-	<nav class="flex flex-col">
+	<nav class="flex flex-col" id="nav">
 		<div class="flex justify-between">
 			<div>
 				<h2 class="font-bold text-4xl dark:text-white font-instrumentSans">
 					<a href="/">{SITE_TITLE}</a>
 				</h2>
-				<p class="text-lg text-gray-700 italic dark:text-gray-500">
+				<p class="text-lg text-gray-700 dark:text-gray-500">
 					{SITE_DESCRIPTION}
 				</p>
 			</div>
 			<div
-				class="flex items-center justify-center align-middle gap-2 flex-wrap self-center"
+				class="flex items-center justify-center align-middle gap-2 flex-wrap self-center transition-all duration-300 ease-in-out opacity-0"
+				id="controls"
 			>
-				<div
+				<!-- <div
 					class="hover:cursor-pointer p-1.5 hover:bg-gray-200 hover:dark:bg-gray-900 rounded-lg inline-flex text-2xl"
 				>
 					<a href="https://github.com/alok8bb" target="_blank">
@@ -28,7 +29,7 @@ import ThemeSwitcher from "./ThemeSwitcher"
 							class="text-black dark:text-gray-300"
 						/>
 					</a>
-				</div>
+				</div> -->
 				<ThemeSwitcher client:load />
 			</div>
 		</div>
@@ -48,5 +49,14 @@ import ThemeSwitcher from "./ThemeSwitcher"
 			</HeaderLink>
 		</div>
 	</nav>
-	<hr class="w-full mt-6" />
 </header>
+
+<script> 
+	document.getElementById('nav')?.addEventListener("mouseenter", () => {
+		document.getElementById('controls')?.classList.remove("opacity-0")
+	})
+
+	document.getElementById('nav')?.addEventListener("mouseleave", () => {
+		document.getElementById('controls')?.classList.add("opacity-0")
+	})
+</script>
