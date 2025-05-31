@@ -2,7 +2,7 @@
 title: 'Plotting candlestick charts for ERC20 tokens using GeckoTerminal API & Plotly'
 description: ""
 pubDate: '27 Jun 2024'
-category: 'snippets'
+category: 'home'
 ---
 
 Recently for work, I wrote a Python script to generate trading charts for ERC20 tokens on the Ethereum mainnet using [GeckoTerminal API](https://www.geckoterminal.com/dex-api). 

@@ -2,7 +2,7 @@
 title: 'Ugh, Why Did I Drink That Coffee?'
 description: 'How coffee and sickness ruined my night, and why you should never have coffee after noon'
 pubDate: '11 Aug 2024'
-category: 'misc'
+category: 'diary'
 ---
 
 My exams are ongoing. The weather here isn't great right now - it's monsoon season. Three days before my exam, I decided to treat myself to pizza and a cold drink. The next day, I woke up with a sore throat. This is usually a sign that I'm going to fall sick in a day or two. The problem was, I had the toughest exam of the bunch coming up, and now I had a sore throat. As the day went on, my body started aching, and so I decided to sleep it off for the rest of the day, hoping for the best.

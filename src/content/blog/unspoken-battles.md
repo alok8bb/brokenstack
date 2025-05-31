@@ -2,7 +2,7 @@
 title: 'Unspoken Battles'
 description: 'Life with long-term health issues'
 pubDate: '28 Aug 2024'
-category: 'misc'
+category: 'diary'
 ---
 
 Not a story, just my thoughts on diseases. I was trying to sleep because my eyes hurt from using the phone too much, but let's not get into that. As I lay there, I just couldn't stop thinking about visiting my cousin sister, who's really sick at the moment.

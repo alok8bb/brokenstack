@@ -2,7 +2,7 @@
 title: 'Aviation Things'
 description: 'just my thoughts and stories related to aircrafts'
 pubDate: '7 Dec 2024'
-category: 'misc'
+category: 'diary'
 ---
 
 Ever since I was a child, I wanted to work in the armed forces, specifically the Navy. Why the Navy? I had watched an ad about the Indian Navy, seen movies like [Battleship](https://en.wikipedia.org/wiki/Battleship_(film)) and always loved the water and the deep blue of the ocean.
